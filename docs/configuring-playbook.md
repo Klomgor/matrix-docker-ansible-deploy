@@ -1,6 +1,22 @@
+<!--
+SPDX-FileCopyrightText: 2018 - 2025 Slavi Pantaleev
+SPDX-FileCopyrightText: 2018 - 2024 MDAD project contributors
+SPDX-FileCopyrightText: 2020 Sabine Laszakovits
+SPDX-FileCopyrightText: 2021 Cody Neiman
+SPDX-FileCopyrightText: 2021 Matthew Cengia
+SPDX-FileCopyrightText: 2021 Toni Spets
+SPDX-FileCopyrightText: 2022 Julian Foad
+SPDX-FileCopyrightText: 2022 Julian-Samuel Gebühr
+SPDX-FileCopyrightText: 2022 Vladimir Panteleev
+SPDX-FileCopyrightText: 2023 Shreyas Ajjarapu
+SPDX-FileCopyrightText: 2024 - 2025 Suguru Hirahara
+
+SPDX-License-Identifier: AGPL-3.0-or-later
+-->
+
 # Configuring the playbook
 
-<sup>[Prerequisites](prerequisites.md) > [Configuring your DNS settings](configuring-dns.md) > [Getting the playbook](getting-the-playbook.md) > Configuring the playbook > [Installing](installing.md)</sup>
+<sup>[Prerequisites](prerequisites.md) > [Configuring DNS settings](configuring-dns.md) > [Getting the playbook](getting-the-playbook.md) > Configuring the playbook > [Installing](installing.md)</sup>
 
 If you've configured your DNS records and retrieved the playbook's source code to your computer, you can start configuring the playbook. To do so, follow these steps inside the playbook directory:
 
@@ -8,7 +24,7 @@ If you've configured your DNS records and retrieved the playbook's source code t
 
 2. copy the sample configuration file (`cp examples/vars.yml inventory/host_vars/matrix.example.com/vars.yml`)
 
-3. edit the configuration file (`inventory/host_vars/matrix.example.com/vars.yml`) to your liking. You may also take a look at the various `roles/*/ROLE_NAME_HERE/defaults/main.yml` files and see if there's something you'd like to copy over and override in your `vars.yml` configuration file.
+3. edit the configuration file (`inventory/host_vars/matrix.example.com/vars.yml`) to your liking. You may also take a look at the various `roles/*/ROLE_NAME_HERE/defaults/main.yml` files (after importing external roles with `just update` into `roles/galaxy`) and see if there's something you'd like to copy over and override in your `vars.yml` configuration file.
 
 4. copy the sample inventory hosts file (`cp examples/hosts inventory/hosts`)
 
@@ -115,6 +131,8 @@ Use alternative file storage to the default `media_store` folder.
 Bridges can be used to connect your Matrix installation with third-party communication networks.
 
 - [Setting up a Generic Mautrix Bridge](configuring-playbook-bridge-mautrix-bridges.md) — a common guide for configuring mautrix bridges
+
+- [Setting up Mautrix Bluesky bridging](configuring-playbook-bridge-mautrix-bluesky.md)
 
 - [Setting up Mautrix Discord bridging](configuring-playbook-bridge-mautrix-discord.md)
 
@@ -239,15 +257,15 @@ Various services that don't fit any other categories.
 
 - [Setting up the Sliding Sync proxy](configuring-playbook-sliding-sync-proxy.md) for clients which require Sliding Sync support (like old Element X versions, before it got switched to Simplified Sliding Sync)
 
-- [Setting up Appservice Webhooks bridging](configuring-playbook-bridge-appservice-webhooks.md) (deprecated; the bridge's author suggests taking a look at [matrix-hookshot](https://github.com/matrix-org/matrix-hookshot) as a replacement, which can also be installed using [this playbook](configuring-playbook-bridge-hookshot.md))
+- [Setting up Appservice Webhooks bridging](configuring-playbook-bridge-appservice-webhooks.md) (deprecated; the bridge's author suggests taking a look at [matrix-hookshot](https://github.com/matrix-org/matrix-hookshot) as a replacement, which can also be [installed using this playbook](configuring-playbook-bridge-hookshot.md))
 
 - [Setting up the Dimension integration manager](configuring-playbook-dimension.md) ([unmaintained](https://github.com/spantaleev/matrix-docker-ansible-deploy/issues/2806#issuecomment-1673559299); after [installing](installing.md))
 
-- [Setting up Email2Matrix](configuring-playbook-email2matrix.md) (unmaintained; the author suggests taking a look at [Postmoogle](https://github.com/etkecc/postmoogle) as a replacement, which can also be installed using [this playbook](configuring-playbook-bridge-postmoogle.md))
+- [Setting up Email2Matrix](configuring-playbook-email2matrix.md) (removed; the author suggests taking a look at [Postmoogle](https://github.com/etkecc/postmoogle) as a replacement, which can also be [installed using this playbook](configuring-playbook-bridge-postmoogle.md))
 
-- [Setting up Go-NEB](configuring-playbook-bot-go-neb.md) (unmaintained; the bridge's author suggests taking a look at [matrix-hookshot](https://github.com/matrix-org/matrix-hookshot) as a replacement, which can also be installed using [this playbook](configuring-playbook-bridge-hookshot.md))
+- [Setting up Go-NEB](configuring-playbook-bot-go-neb.md) (unmaintained; the bridge's author suggests taking a look at [matrix-hookshot](https://github.com/matrix-org/matrix-hookshot) as a replacement, which can also be [installed using this playbook](configuring-playbook-bridge-hookshot.md))
 
-- [Setting up matrix-bot-chatgpt](configuring-playbook-bot-chatgpt.md) (unmaintained; the bridge's author suggests taking a look at [baibot](https://github.com/etkecc/baibot) as a replacement, which can also be installed using [this playbook](configuring-playbook-bot-baibot.md))
+- [Setting up matrix-bot-chatgpt](configuring-playbook-bot-chatgpt.md) (unmaintained; the bridge's author suggests taking a look at [baibot](https://github.com/etkecc/baibot) as a replacement, which can also be [installed using this playbook](configuring-playbook-bot-baibot.md))
 
 - [Setting up Mautrix Facebook bridging](configuring-playbook-bridge-mautrix-facebook.md) (deprecated in favor of the Messenger/Instagram bridge with [mautrix-meta-messenger](configuring-playbook-bridge-mautrix-meta-messenger.md))
 

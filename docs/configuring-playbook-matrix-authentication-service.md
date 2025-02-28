@@ -1,3 +1,10 @@
+<!--
+SPDX-FileCopyrightText: 2024 - 2025 Slavi Pantaleev
+SPDX-FileCopyrightText: 2024 - 2025 Suguru Hirahara
+
+SPDX-License-Identifier: AGPL-3.0-or-later
+-->
+
 # Setting up Matrix Authentication Service (optional)
 
 The playbook can install and configure [Matrix Authentication Service](https://github.com/element-hq/matrix-authentication-service/) (MAS) — a service operating alongside your existing [Synapse](./configuring-playbook-synapse.md) homeserver and providing [better authentication, session management and permissions in Matrix](https://matrix.org/blog/2023/09/better-auth/).
@@ -51,9 +58,6 @@ This section details what you can expect when switching to the Matrix Authentica
   - [Postmoogle](./configuring-playbook-bridge-postmoogle.md) works the first time around, but it consistently fails after restarting:
 
     > cannot initialize matrix bot error="olm account is marked as shared, keys seem to have disappeared from the server"
-
-  - [matrix-reminder-bot](./configuring-playbook-bot-matrix-reminder-bot.md) fails to start (see [element-hq/matrix-authentication-service#3439](https://github.com/element-hq/matrix-authentication-service/issues/3439))
-  - Other services may be similarly affected. This list is not exhaustive.
 
 - ❌ **Encrypted appservices** do not work yet (related to [MSC4190](https://github.com/matrix-org/matrix-spec-proposals/pull/4190) and [PR 17705 for Synapse](https://github.com/element-hq/synapse/pull/17705)), so all bridges/bots that rely on encryption will fail to start (see [this issue](https://github.com/spantaleev/matrix-docker-ansible-deploy/issues/3658) for Hookshot). You can use these bridges/bots only if you **keep end-to-bridge encryption disabled** (which is the default setting).
 
